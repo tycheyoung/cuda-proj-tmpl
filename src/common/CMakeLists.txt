@@ -2,7 +2,8 @@ add_library(cudaCommon "")
 target_sources(cudaCommon PRIVATE
   my_cuda_utils.cu
   OpenMPTimer.cpp
-  SimpleTimer.cpp)
+  SimpleTimer.cpp
+  nvmlPower.hpp)
 
 target_include_directories(cudaCommon
   PUBLIC
@@ -21,3 +22,4 @@ if(OpenMP_CXX_FOUND)
 endif(OpenMP_CXX_FOUND)
 
 add_library(cuda::common ALIAS cudaCommon)
+

@@ -16,3 +16,4 @@ target_compile_options(saxpy_cuda PUBLIC
 target_link_libraries(saxpy_cuda PUBLIC CUDA::cublas)
 target_link_libraries(saxpy_cuda PUBLIC OpenMP::OpenMP_CXX)
 target_link_libraries(saxpy_cuda PUBLIC cuda::common)
+

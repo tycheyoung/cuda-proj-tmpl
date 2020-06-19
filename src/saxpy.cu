@@ -34,7 +34,7 @@
 #include "SimpleTimer.h"
 #include "OpenMPTimer.h"
 #include "CudaTimer.h"
-
+#include "common/nvmlPower.hpp"
 // =========================
 // global variables and configuration section
 // =========================
@@ -236,7 +236,9 @@ int main (int argc, char **argv)
 
   gpuTimer.reset();
   gpuTimer.start();
+  nvmlAPIRun(); 
   cublasSaxpy(handle, N, &alpha, d_x, 1, d_y, 1);
+  nvmlAPIEnd();
   gpuTimer.stop();
   time = gpuTimer.elapsed();
 
